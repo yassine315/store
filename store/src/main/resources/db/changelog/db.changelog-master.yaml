@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - changeSet:
+      id: v.2021-01-06-01
+      author: yassine
+      changes:
