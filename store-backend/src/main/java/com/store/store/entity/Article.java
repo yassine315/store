@@ -14,5 +14,11 @@ public class Article {
 
     private String name;
 
+    private float prix;
+
+    private boolean availability;
+
+    private String urlImag;
+
 
 }
