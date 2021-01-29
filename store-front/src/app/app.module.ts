@@ -10,6 +10,8 @@ import { FooterComponent } from './component/footer/footer.component';
 import { BodyComponent } from './component/body/body.component';
 import { ArticlesScrollComponent } from './component/body/articles-scroll/articles-scroll.component';
 import { ArticleComponent } from './component/body/article/article.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -19,12 +21,13 @@ import { ArticleComponent } from './component/body/article/article.component';
     FooterComponent,
     BodyComponent,
     ArticlesScrollComponent,
-    ArticleComponent
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxPopper
+    NgxPopper,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
