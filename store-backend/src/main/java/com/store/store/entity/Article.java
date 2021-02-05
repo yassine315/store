@@ -20,5 +20,4 @@ public class Article {
 
     private String urlImag;
 
-
 }

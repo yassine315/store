@@ -11,6 +11,7 @@ import { BodyComponent } from './component/body/body.component';
 import { ArticlesScrollComponent } from './component/body/articles-scroll/articles-scroll.component';
 import { ArticleComponent } from './component/body/article/article.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './component/login/login.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BodyComponent,
     ArticlesScrollComponent,
     ArticleComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

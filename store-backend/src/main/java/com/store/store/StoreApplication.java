@@ -23,7 +23,7 @@ public class StoreApplication {
     @Bean
     public CommandLineRunner start(){
         return args -> {
-            jpaArticle.save(new Article(3L,"cus"));
+            jpaArticle.save(new Article());
         };
     }
 
