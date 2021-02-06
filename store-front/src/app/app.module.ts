@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,25 @@ import { ArticlesScrollComponent } from './component/body/articles-scroll/articl
 import { ArticleComponent } from './component/body/article/article.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './component/login/login.component';
+import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
+
+
+export function initializeKeycloak(keycloak: KeycloakService) {
+  return () =>
+    keycloak.init({
+      config: {
+        url: 'http://localhost:8080/auth',
+        realm: 'store',
+        clientId: 'store-nyia-front',
+      },
+      initOptions: {
+        onLoad: 'check-sso',
+        checkLoginIframe: true,
+        silentCheckSsoRedirectUri:
+          window.location.origin + '/assets/silent-check-sso.html',
+      },
+    });
+}
 
 
 @NgModule({
@@ -27,11 +46,17 @@ import { LoginComponent } from './component/login/login.component';
   ],
   imports: [
     BrowserModule,
+    KeycloakAngularModule,
     AppRoutingModule,
     NgxPopper,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [{
+    provide: APP_INITIALIZER,
+    useFactory: initializeKeycloak,
+    multi: true,
+    deps: [KeycloakService],
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,6 +24,8 @@
     "angular-popper": "^2.0.1",
     "bootstrap": "^4.6.0",
     "jquery": "^3.5.1",
+    "keycloak-angular": "^8.1.0",
+    "keycloak-js": "^12.0.2",
     "popper": "^1.0.1",
     "popper.js": "^1.14.0",
     "rxjs": "~6.6.0",
